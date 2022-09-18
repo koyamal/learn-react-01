@@ -8,10 +8,15 @@ const App = () => {
     color: "blue",
     fontSize: "18px"
   };
+  const contentLedyStyle = {
+    color: "pink",
+    fontSize: "18px"
+  };
   return (
     <>
       <h1 style={{ color: "red" }}>hello!!</h1>
       <p style={contentStyle}>How are you?</p>
+      <p style={contentLedyStyle}>I'm fine!!</p>
       <button onClick={onClickButton}>Button</button>
     </>
   );
