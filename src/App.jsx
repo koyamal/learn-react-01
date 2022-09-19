@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+/* eslint react-hooks/exhaustive-deps: off */
+import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 import ColorfulMessageChildren from "./components/ColorfulMessageChildren";
 
 const App = () => {
-  //console.log("001");
+  console.log("start");
   const [num, setNum] = useState(0);
   const [faceShowFlag, setFaceShowFlag] = useState(true);
 
@@ -13,6 +14,15 @@ const App = () => {
   const onClickSwitchShowFlag = () => {
     setFaceShowFlag(!faceShowFlag);
   };
+
+  useEffect(() => {
+    console.log("useEffect is Called");
+    if (num % 3 === 0) {
+      faceShowFlag || setFaceShowFlag(true);
+    } else {
+      faceShowFlag && setFaceShowFlag(false);
+    }
+  }, [num]);
 
   return (
     <>
